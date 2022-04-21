@@ -1,0 +1,44 @@
+<div class="list row pt-5">
+    <div class="col-md-8">
+      <div class="input-group mb-3">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Search by recipe_name"
+          [(ngModel)]="recipe_name"
+        />
+        <div class="input-group-append">
+          <button
+            class="btn btn-outline-secondary"
+            type="button"
+            (click)="searchName()"
+          >
+            Search
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <h4>Recipes</h4>
+      <ul class="list-group">
+        <li
+          class="list-group-item bg-light text-dark"
+          *ngFor="let recipe of recipes; let i = index"
+          [class.active]="i == currentIndex"
+          (click)="setActiveRecipe(recipe, i)"
+        >
+          {{ recipe.recipe_name }}
+          <img class="img-fluid" src="http://res.cloudinary.com/johnstat101/{{ recipe.recipe_pic }}" alt="">
+        </li>
+      </ul>
+      <button class="m-3 btn btn-sm btn-danger" (click)="removeAllRecipes()">
+        Remove All
+      </button>
+    </div>
+    <div class="col-md-6">
+      <app-recipe-details
+        [viewMode]= true
+        [currentRecipe]="currentRecipe"
+      ></app-recipe-details>
+    </div>
+  </div>

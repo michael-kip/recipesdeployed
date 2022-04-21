@@ -1,0 +1,122 @@
+<div>
+    <div class="submit-form  pt-5">
+      <div *ngIf="!submitted">
+        <div class="form-group">
+          <label for="title">Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            required
+            [(ngModel)]="recipe.recipe_name"
+            name="name"
+          />
+        </div>
+        <div class="form-group">
+          <label for="description">Ingredients</label>
+          <input
+            class="form-control"
+            id="description"
+            required
+            [(ngModel)]="recipe.ingredient"
+            name="description"
+          />
+        </div>
+        <div class="form-group">
+            <label for="image">Category</label>
+            <input
+              class="form-control"
+              id="image"
+              required
+              [(ngModel)]="recipe.category"
+              name="image"
+            />
+          </div>
+          <div class="form-group">
+            <label for="ingredient">Image</label>
+            <input
+              class="form-control"
+              id="ingredient"
+              required
+              [(ngModel)]="recipe.recipe_pic"
+              name="ingredient"
+            />
+          </div>
+          <div class="form-group">
+            <label for="rating">Country</label>
+            <input
+              class="form-control"
+              id="rating"
+              required
+              [(ngModel)]="recipe.country"
+              name="rating"
+            />
+          </div>
+          <div class="form-group">
+            <label for="procedure">Procedure</label>
+            <input
+              class="form-control"
+              id="procedure"
+              required
+              [(ngModel)]="recipe.procedure"
+              name="procedure"
+            />
+          </div>
+          <div class="form-group">
+            <label for="category">Guests</label>
+            <input
+              class="form-control"
+              id="category"
+              required
+              [(ngModel)]="recipe.guests_served"
+              name="category"
+            />
+          </div>
+          <div class="form-group">
+            <label for="guests">Created on</label>
+            <input
+              class="form-control"
+              id="guests"
+              required
+              [(ngModel)]="recipe.created_date"
+              name="guests"
+            />
+          </div>
+            <div class="form-group">
+                <label for="country">Created by</label>
+                <input
+                class="form-control"
+                id="country"
+                required
+                [(ngModel)]="recipe.created_by"
+                name="country"
+                />
+            </div>
+            <!-- <div class="form-group">
+                <label for="create_date">Create date</label>
+                <input
+                class="form-control"
+                id="create_date"
+                required
+                [(ngModel)]="recipe.date"
+                name="create_date"
+                />
+            </div>
+            <div class="form-group">
+                <label for="created_by">Created by</label>
+                <input
+                class="form-control"
+                id="created_by"
+                required
+                [(ngModel)]="recipe.by"
+                name="created_by"
+                />
+            </div> -->
+        <button (click)="saveRecipe()" class="btn btn-success">Submit</button>
+      </div>
+      <div *ngIf="submitted">
+        <h4>Recipe was submitted successfully!</h4>
+        <button class="btn btn-success" (click)="newRecipe()">Add</button>
+      </div>
+    </div>
+  </div>

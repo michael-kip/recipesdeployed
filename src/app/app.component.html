@@ -1,0 +1,18 @@
+<div>
+  <nav class="navbar navbar-expand navbar-dark bg-black text-light ">
+    <a href="#" class="navbar-brand"><img src="/assets/img/rsslog1.jpeg" alt="RSS" class="img-fluid logo"></a>
+    <div class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a routerLink="recipes" class="nav-link">Recipes</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="add" class="nav-link">Add</a>
+      </li>
+    </div>
+  </nav>
+
+  <div class="container mt-3">
+    <router-outlet></router-outlet>
+  </div>
+  <app-footer></app-footer>
+</div>

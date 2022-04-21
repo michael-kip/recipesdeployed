@@ -1,0 +1,130 @@
+<div *ngIf="viewMode; else editable" class="pt-5">
+    <div *ngIf="currentRecipe.id">
+      <h4>Recipe</h4>
+      <div>
+        <label><strong>Name:</strong></label> {{ currentRecipe.recipe_name }}
+      </div>
+      <div>
+        <label><strong>Category:</strong></label>
+        {{ currentRecipe.category }}
+      </div>
+      <a
+        class="badge badge-warning"
+        routerLink="/recipes/{{ currentRecipe.id }}"
+      >
+        Edit
+      </a>
+    </div>
+    <div *ngIf="!currentRecipe">
+      <br />
+      <p>Please click on a Recipe...</p>
+    </div>
+  </div>
+  <ng-template #editable>
+    <div *ngIf="currentRecipe.id" class="edit-form pt-5">
+      <h4>Recipe</h4>
+      <form>
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            [(ngModel)]="currentRecipe.recipe_name"
+            name="name"
+          />
+        </div>
+        <div class="form-group">
+          <label for="description">Ingridients</label>
+          <input
+            type="text"
+            class="form-control"
+            id="description"
+            [(ngModel)]="currentRecipe.ingredient"
+            name="description"
+          />
+        </div>
+        <div class="form-group">
+          <label for="category">Category</label>
+          <input
+            type="text"
+            class="form-control"
+            id="category"
+            [(ngModel)]="currentRecipe.category"
+            name="category"
+          />
+        </div>
+        <div class="form-group">
+          <label for="image">Image</label>
+          <input
+            type="text"
+            class="form-control"
+            id="image"
+            [(ngModel)]="currentRecipe.recipe_pic"
+            name="image"
+          />
+        </div>
+        <div class="form-group">
+          <label for="country">Country</label>
+          <input
+            type="text"
+            class="form-control"
+            id="country"
+            [(ngModel)]="currentRecipe.country"
+            name="country"/>
+        </div>
+        <div class="form-group">
+          <label for="procedure">Procedure</label>
+          <input
+            type="text"
+            class="form-control"
+            id="procedure"
+            [(ngModel)]="currentRecipe.procedure"
+            name="procedure"/>
+        </div>
+        <div class="form-group">
+          <label for="guests_served">Guests Served</label>
+          <input
+            type="text"
+            class="form-control"
+            id="guests_served"
+            [(ngModel)]="currentRecipe.guests_served"
+            name="guests_served"/>
+        </div>
+        <div class="form-group">
+          <label for="created_on">Created On</label>
+          <input
+            type="text"
+            class="form-control"
+            id="created_on"
+            [(ngModel)]="currentRecipe.created_date"
+            name="created_on"/>
+        </div>
+        <div class="form-group">
+          <label for="created_by">Created By</label>
+          <input
+            type="text"
+            class="form-control"
+            id="created_by"
+            [(ngModel)]="currentRecipe.created_by"
+            name="created_by"/>
+        </div>
+
+      </form>
+      <button class="badge badge-danger mr-2" (click)="deleteRecipe()">
+        Delete
+      </button>
+      <button
+        type="submit"
+        class="badge badge-warning mb-2"
+        (click)="updateRecipe()"
+      >
+        Update
+      </button>
+      <p>{{ message }}</p>
+    </div>
+    <div *ngIf="!currentRecipe.id">
+      <br />
+      <p>Cannot access this Recipe...</p>
+    </div>
+  </ng-template>

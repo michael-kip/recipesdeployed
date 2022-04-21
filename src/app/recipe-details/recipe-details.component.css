@@ -1,0 +1,19 @@
+.edit-form {
+    max-width: 400px;
+    margin: auto;
+  }
+  .badge-pill {
+    border-radius: 10px;
+  }
+  .badge-pill:hover {
+    background-color: #ccc;
+  }
+  .badge-pill:active {
+    background-color: #ccc;
+  }
+  .badge-pill:focus {
+    background-color: #ccc;
+  }
+  .badge{
+    background-color: orangered;
+  }
